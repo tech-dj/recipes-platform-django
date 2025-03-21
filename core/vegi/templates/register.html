@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block head %}
+
+
+  <div class="container mt-5">
+
+    <form class="col-9 mx-auto card p-5 shadow-lg"  method="post" enctype="multipart/form-data"> 
+      {% csrf_token %}
+      <div class="mb-3">
+        
+          {% if messages %}
+          
+           
+                    {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                        </div>
+                    {% endfor %}
+             
+           
+        {% endif %}
+        
+        
+
+        <h3>Register User :</h3>
+      
+       
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">First Name :</label>
+          <input type="text" class="form-control" name="first_name" id="exampleInputEmail1" aria-describedby="emailHelp">
+         
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Last Name </label>
+          <input type="text" class="form-control" name="last_name" id="exampleInputPassword1">
+        </div>
+       
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">UserName :</label>
+            <input type="text" class="form-control" name="userid" id="exampleInputEmail1" aria-describedby="emailHelp">
+           
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <p>Already Have a Account  <a href="\login\"> Login </a></p>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+   
+    
+   
+
+   
+
+    
+
+  </div>
+
+
+   {% endblock %}
